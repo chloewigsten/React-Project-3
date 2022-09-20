@@ -19,6 +19,9 @@ function Header(props) {
             <Link to="/display">
               <div>Breed List</div>
             </Link>
+            <Link to="/show">
+              <div>Breed Show</div>
+            </Link>
           </nav>
         </header>
    )
