@@ -11,16 +11,13 @@ function Header(props) {
       };
       return (
         <header>
-          <h1>Dog Breeds</h1>
+          <h1>Bob's Burger Character Index</h1>
           <nav style={navStyle}>
             <Link to="/">
               <div>HOME</div>
             </Link>
             <Link to="/display">
-              <div>Breed List</div>
-            </Link>
-            <Link to="/show">
-              <div>Breed Show</div>
+              <div>Character List</div>
             </Link>
           </nav>
         </header>
