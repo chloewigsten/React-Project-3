@@ -10,6 +10,14 @@ const Home = (props) => {
                 </Link>
                 <p>Find out more about the characters, and see how much you already knew about each one of them!</p>
             </div>
+            <div className="add-new">
+            <Link to='/characters/add-new'>
+                   <h3>Add A New Character</h3>
+                </Link>
+            </div>
+            <Link to='/characters'>
+                    <img src="https://i.imgur.com/Uf0A7B6.png" alt="Browse The Characters"/>
+                </Link>
             <div className='about-bob'>
                 <img src="https://i.imgur.com/sd8oEyx.png" alt="bob talking to camera" className='about-bob-image'/>
                 <div className='about-bob-text'>
