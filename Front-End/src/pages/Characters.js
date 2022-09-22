@@ -21,20 +21,20 @@ function Characters(props) {
     }, []);
 
     return (
-        <>
+        <div className='character-index'>
         {characters ? characters.map((character, idx) => {
             return (
-                <div className='character-index'>
+                <div>
                     <h1>{character.name}</h1>
                     <Link to={`/characters/${character._id}`}>
-                        <img src={character.image} alt={character.name}/>
+                        <img src={character.image} alt={character.name} max-height="300px"/>
                     </Link>
                     
                 </div>
             )
         }) : <h1>Loading...</h1>
     }
-        </>
+        </div>
 
     )
 }

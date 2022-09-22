@@ -52,6 +52,7 @@ body {
 .home {
   padding-bottom: 50px;
   color: white;
+  font-size: 25px;
 }
 
 .about-bob {
@@ -65,18 +66,28 @@ body {
 
 .about-bob-image {
   width: 300px;
-  height: 300px;
+  height: 400px;
   object-fit: none;
   margin-left: 5%;
+
+}
+
+.about-bob-title {
+  margin-bottom: 0px;
+  margin-right: 10%;
+  padding-left: 10%;
 }
 
 .about-bob-text {
   margin-right: 5%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 15px;
   font-family:'Schoolbell', cursive;
+  line-height: 35px;
+  color: black;
 }
 
 .characters-index {
@@ -84,4 +95,35 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   
+}
+
+.character {
+  padding: 30px;
+  background-color: #F3F754;
+  border-radius: 10px;
+  width: 700px;
+  margin-left: 22%;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+  display: flex;
+}
+
+.character-name {
+  font-size: 40px;
+  color: #a4403a;
+}
+
+.character-info {
+  margin-left: 30px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.character-headshot {
+  margin-left: 100px;
+}
+
+.character-index-image {
+  max-width: 300px;
 }

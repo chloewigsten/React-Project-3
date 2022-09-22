@@ -21,10 +21,8 @@ const Home = (props) => {
             <div className='about-bob'>
                 <img src="https://i.imgur.com/sd8oEyx.png" alt="bob talking to camera" className='about-bob-image'/>
                 <div className='about-bob-text'>
-                    <h2>About Bob</h2>
-                    <p>Robert "Bob" Belcher Jr. is a third-generation restaurateur, and the main protagonist of the Fox's reality series, Bob's Burgers. Bob runs Bob's Burgers with the help of his wife, Linda Belcher, and their three kids, Tina Belcher, Louise Belcher, and Gene Belcher.
-
-                    While poor with business management and cursed with an unlucky streak, his experience and skill in homemade cuisine has helped his restaurant stay afloat, in spite of seemingly constant financial uncertainty, providing for his family all the while. Learn more about Bob <a href="https://bobs-burgers.fandom.com/wiki/Bob_Belcher">here</a>. </p>
+                    <h2 className='about-bob-title'>About Bob</h2>
+                    <p>Robert "Bob" Belcher Jr. is a third-generation restaurateur, and the main protagonist of the Fox's reality series, Bob's Burgers. Bob runs Bob's Burgers with the help of his wife, Linda Belcher, and their three kids, Tina Belcher, Louise Belcher, and Gene Belcher. Learn more about Bob <a href="https://bobs-burgers.fandom.com/wiki/Bob_Belcher">here</a>. </p>
                 </div>
             </div>
         </header>

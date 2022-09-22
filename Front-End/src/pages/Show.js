@@ -24,9 +24,14 @@ function ShowPage(props) {
     const loaded = () => {
         return (
             <div className='character'>
-                <h1>{character.name}</h1>
-                <img src={character.image} alt={character.name} />
-                <h2>{character.gender}</h2>
+                <img src={character.image} alt={character.name} className='character-headshot' />
+                <div className='character-info'> 
+                    <h1 className='character-name'>{character.name}</h1>
+                    <p>Gender: {character.gender}</p>
+                    <p>Hair Color: {character.hairColor}</p>
+                    <p>Occupation: {character.occupation}</p>
+                    <p>First Appearance: {character.firstEpisode}</p>
+                    </div>
             </div>
         )
 

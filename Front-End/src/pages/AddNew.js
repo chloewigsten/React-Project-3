@@ -1,30 +1,36 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
+const BASE_URL= 'http://localhost:4000/'
 
 
-function AddNew (props) {
+function AddNew(props) {
+    const [character, setCharacter] = useState([]);
+    const { id } = useParams()
+    const URL = `${BASE_URL}characters/add-new`
 
-    const BASE_URL = 'http://localhost:4000/characters/add-new'
-
-    const getCharacters = async (fn) => {
+    const getCharacters = async () => {
 
         try {
-            const response = await fetch(BASE_URL);
-            const allCharacters = await response.json()
-    
-            fn(allCharacters);
+            const response = await fetch(URL)
+            const characterData = await response.json()
+            setCharacter(characterData)
         } catch (err) {
-            console.log(err);
+            console.log(err)
         }
-    };
+    }
+
 
     const initForm = {
         name: "", 
         image: "",
-        gender:""
+        gender:"",
+        hairColor: "",
+        occupation: "",
+        firstAppearance:""
     }
 
     const [characters, setCharacters] = useState([]); 
-    console.log(characters)
 
     const [newForm, setNewForm] = useState(initForm)
 
@@ -50,7 +56,7 @@ function AddNew (props) {
                 body: testingOutput
             }
 
-            const URL = BASE_URL+"characters"
+            const URL = `${BASE_URL} + characters/add-new`
             const response = await fetch(URL, options)
 
             const responseData = await response.json()
