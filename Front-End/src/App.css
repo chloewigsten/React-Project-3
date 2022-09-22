@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+  background-color: orange;
+  
+}
+
+@font-face {
+  font-family: 'Schoolbell', cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+}
+
+.nav {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+  font-family: 'Schoolbell';
+  font-size: 25px;
+  color: white;
+  background-image: url('https://i.imgur.com/PSteDwx.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 45% 63%;
+}
+
+.logo {
+  width: 550px;
+  height: auto;
+
+}
+
+.nav-header {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+  height: 60px;
+}
+
+.header-photo { 
+  background-size: cover;
+  width: 90%;
+}
+
+.spinner {
+  width: 50px; 
+}
+
+.home {
+  padding-bottom: 50px;
+  color: white;
+}
+
+.about-bob {
+  display: flex;
+  flex-direction: row;
+  background-color: lightblue;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 10px;
+}
+
+.about-bob-image {
+  width: 300px;
+  height: 300px;
+  object-fit: none;
+  margin-left: 5%;
+}
+
+.about-bob-text {
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+  font-family:'Schoolbell', cursive;
+}
