@@ -1,39 +1,41 @@
-import Character from '../components/Character'
-
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-const BASE_URL = "http://localhost:3000/";
 
-const ShowPage = (props) => {
-    const [characters, setCharacters] = useState(null);
+const BASE_URL = "http://localhost:4000/";
+
+function ShowPage(props) {
+    const [character, setCharacter] = useState([]);
     const { id } = useParams()
     const navigate = useNavigate()
     const URL = `${BASE_URL}characters/${id}`
-    console.log(URL)
+    // console.log(URL)
 
-    const getCharacters = async () => {
+    const getCharacter = async () => {
 
         try {
             const response = await fetch(URL)
             const characterData = await response.json()
-            setCharacters(characterData)
+            setCharacter(characterData)
+            console.log(character)
         } catch (err) {
             console.log(err)
         }
     }
 
     const loaded = () => {
-        return characters.map(character => (
+        return (
             <div className='character'>
                 <h1>{character.name}</h1>
                 <img src={character.image} alt={character.name} />
-                <p>{character.gender}</p>
+                <h2>{character.gender}</h2>
             </div>
         )
-        )
+
     }
 
+
     const loading = () => {
+        console.log(character)
         return (
             <h1> Loading... </h1>
         )
@@ -56,20 +58,22 @@ const ShowPage = (props) => {
     }
 
     useEffect(() => {
-        getCharacters();
+        getCharacter();
     }, []);
 
         return (
             <>
-           {characters ? loaded() : loading()}
+           {character ? loaded() : loading()}
 
         <div className="button-wrapper">
-            <Link to='/'>Back To Home Page</Link>
                 <button
                     onClick={removeCharacter}
                 >
                  Remove Character
                 </button>
+                <div>
+                <Link to='/'>Back To Home Page</Link>
+                </div>
             </div>
         </>
     )

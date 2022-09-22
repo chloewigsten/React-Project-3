@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+
 const AddNew = (props) => {
 
     const BASE_URL = 'http://localhost:3000/characters/add-new'
@@ -72,7 +73,7 @@ const AddNew = (props) => {
         <section>
                 <h2>Add in Your Favorite Character</h2>
                 <form onSubmit={handleSubmit}>
-                    <label>
+                <label>
                         <span>Name</span>
                         <input type="text" required name="name" placeholder="Enter character's name" onChange={handleChange} defaultValue={newForm.name} />
                     </label>
@@ -82,7 +83,23 @@ const AddNew = (props) => {
                     </label>
                     <label>
                         <span>Gender</span>
-                        <input type="text" required name="gender" placeholder="Enter Character's Gender" onChange={handleChange} defaultValue={newForm.title} />
+                        <input type="text" required name="gender" placeholder="Enter Character's Gender" onChange={handleChange} defaultValue={newForm.gender} />
+                    </label>
+                    <label>
+                        <span>Hair Color</span>
+                        <input type="text" required name="hair-color" placeholder="Enter Character's Hair Color" onChange={handleChange} defaultValue={newForm.hairColor} />
+                    </label>
+                    <label>
+                        <span>Occupation</span>
+                        <input type="text" required name="occupation" placeholder="Enter Character's Job" onChange={handleChange} defaultValue={newForm.occupation} />
+                    </label>
+                    <label>
+                        <span>First Episode Appearance</span>
+                        <input type="text" required name="first-episode" placeholder="Enter Character's Job" onChange={handleChange} defaultValue={newForm.firstEpisode} />
+                    </label>
+                    <label>
+                        <span>Relatives</span>
+                        <input type="text" required name="relatives" placeholder="Enter Character's Relatives" onChange={handleChange} defaultValue={newForm.relatives} />
                     </label>
                     <input type="Submit" defaultValue="Create Character" />
                 </form>

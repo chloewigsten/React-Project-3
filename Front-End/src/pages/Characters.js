@@ -26,7 +26,9 @@ function Characters(props) {
                 <div className='character-index'>
                     <h1>{character.name}</h1>
                     <img src={character.image} alt={character.name}/>
-                    <p>{character.gender}</p>
+                    <p>Gender: {character.gender}</p>
+                    <p>Hair Color: {character.hairColor}</p>
+                    
                 </div>
             )
         }) : <h1>Loading...</h1>
