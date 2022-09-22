@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 import Character from '../components/Character'
 
 function Characters(props) {
@@ -25,9 +26,9 @@ function Characters(props) {
             return (
                 <div className='character-index'>
                     <h1>{character.name}</h1>
-                    <img src={character.image} alt={character.name}/>
-                    <p>Gender: {character.gender}</p>
-                    <p>Hair Color: {character.hairColor}</p>
+                    <Link to={`/characters/${character._id}`}>
+                        <img src={character.image} alt={character.name}/>
+                    </Link>
                     
                 </div>
             )

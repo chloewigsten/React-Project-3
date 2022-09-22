@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
 
-const AddNew = (props) => {
+function AddNew (props) {
 
-    const BASE_URL = 'http://localhost:3000/characters/add-new'
+    const BASE_URL = 'http://localhost:4000/characters/add-new'
 
     const getCharacters = async (fn) => {
 
@@ -73,7 +73,7 @@ const AddNew = (props) => {
         <section>
                 <h2>Add in Your Favorite Character</h2>
                 <form onSubmit={handleSubmit}>
-                <label>
+                    <label>
                         <span>Name</span>
                         <input type="text" required name="name" placeholder="Enter character's name" onChange={handleChange} defaultValue={newForm.name} />
                     </label>

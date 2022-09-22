@@ -8,7 +8,6 @@ function ShowPage(props) {
     const { id } = useParams()
     const navigate = useNavigate()
     const URL = `${BASE_URL}characters/${id}`
-    // console.log(URL)
 
     const getCharacter = async () => {
 
@@ -44,7 +43,7 @@ function ShowPage(props) {
     const removeCharacter = async () => {
         try {
             const options = { method: 'DELETE'}
-            const URL = "http://localhost:3000/characters" + id
+            const URL = "http://localhost:4000/characters" + id
             console.log(URL)
 
             const response = await fetch(URL, options)
@@ -53,7 +52,7 @@ function ShowPage(props) {
             navigate('/')
         } catch (err) {
             console.log(err)
-            navigate('http://localhost:3000/characters' + id)
+            navigate('http://localhost:4000/characters' + id)
         }
     }
 
@@ -80,4 +79,3 @@ function ShowPage(props) {
 }
 
   export default ShowPage;
-  
