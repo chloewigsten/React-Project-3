@@ -1,12 +1,13 @@
-.App {
-  text-align: center;
-  background-color: orange;
-  
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+body {
+  font-family: 'Schoolbell', cursive;
 }
 
-@font-face {
-  font-family: 'Schoolbell', cursive;
-  src: url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+.App {
+  text-align: center;
+  background-color: #ffa500;
+  
 }
 
 .nav {
@@ -23,6 +24,20 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 45% 63%;
+}
+
+.footer {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+}
+
+.website-credit {
+  display: flex; 
+  flex-direction: column;
 }
 
 .logo {
@@ -51,6 +66,7 @@
 .home {
   padding-bottom: 50px;
   color: white;
+  font-size: 25px;
 }
 
 .about-bob {
@@ -59,21 +75,204 @@
   background-color: lightblue;
   margin-left: 10%;
   margin-right: 10%;
+  margin-bottom: 0px;
   border-radius: 10px;
+  border: 5px solid white;
 }
 
 .about-bob-image {
   width: 300px;
-  height: 300px;
+  height: 400px;
   object-fit: none;
   margin-left: 5%;
+
+}
+
+.about-bob-title {
+  margin-bottom: 0px;
+  margin-right: 10%;
+  padding-left: 10%;
 }
 
 .about-bob-text {
   margin-right: 5%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 15px;
   font-family:'Schoolbell', cursive;
+  line-height: 35px;
+  color: black;
+}
+
+.character {
+  padding: 30px;
+  background: url("https://i.imgur.com/GbvTZCu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 900px;
+  margin-left: 17%;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+  display: flex;
+}
+
+.character-name {
+  font-size: 40px;
+  color:red;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex; 
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.character-info {
+  margin-left: 30px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.character-details {
+  background-color: white;
+  color: rgb(86, 86, 86);
+  padding: 5px;
+  border: 1px solid black;
+  width: 350px;
+
+}
+
+.bold {
+  color: black;
+}
+
+.character-headshot {
+  margin-left: 100px;
+  margin-top: 3%;
+  max-height: 300px;
+
+  border: 2px solid black;
+
+}
+
+.character-index-image {
+  height: 200px;
+  max-width: 250px;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.character-index {
+  border: 5px solid #2566BD;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent-index {
+  width: 100%;
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  color: black;
+  font-size: 20px;
+}
+
+.page-title {
+  font-size: 30px;
+  color: white; 
+}
+
+.learn-more-button {
+  background-color: red;
+  color: yellow;
+  text-decoration: none;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.learn-more-button:hover {
+  background-color: yellow;
+  color: red;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.learn-more-section {
+  display: flex; 
+  align-items: space-evenly;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-top: 50px;
+  height: 20px;
+  align-self: flex-end;
+}
+
+.intro {
+  display: flex; 
+  justify-content: flex-end;
+  flex-direction: column;
+  line-height: 45px;
+}
+
+.section-one {
+  display: flex;
+  margin-left: 15%;
+  margin-right: 15%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.return {
+  padding-bottom: 10px;
+  padding: 10px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  margin-left: 40%;
+}
+
+.return-burger {
+  width: 70px;
+  padding-left: 5px;
+}
+
+.return-section {
+  padding-bottom: 20px;
+}
+
+.return-link {
+  color: #000;
+  text-decoration: none;
 }

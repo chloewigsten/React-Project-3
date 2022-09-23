@@ -4,7 +4,10 @@ function Character ({character}) {
         <>
             <h1>{character.name}</h1>
             <img src={character.image} alt={character.name} />
-            <h2>{character.gender}</h2>
+            <p>{character.gender}</p>
+            <p>{character.hairColor}</p>
+            <p>{character.occupation}</p>
+            <p>{character.firstEpisode}</p>
         </>
     )
 }

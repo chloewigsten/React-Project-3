@@ -1,114 +1,63 @@
-import EditForm from '../components/EditForm'
-
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-const BASE_URL = "http://localhost:3000/";
 
-const ShowPage = (props) => {
-    const [editForm, setEditForm] = useState(null); 
-    const [characters, setCharacters] = useState(null);
+const BASE_URL = "http://localhost:4000/";
+
+function ShowPage(props) {
+    const [character, setCharacter] = useState([]);
     const { id } = useParams()
-    const navigate = useNavigate()
     const URL = `${BASE_URL}characters/${id}`
 
-    const getCharacters = async () => {
-        // console.log(URL)
-        try {
+    const getCharacter = async () => {
 
+        try {
             const response = await fetch(URL)
             const characterData = await response.json()
-            setCharacters(characterData)
-            setEditForm(characterData)
+            setCharacter(characterData)
+            console.log(character)
         } catch (err) {
             console.log(err)
         }
     }
 
     const loaded = () => {
-        return characters.map(character => (
+        return (
             <div className='character'>
-                <h1>{character.name}</h1>
-                <img src={character.image} alt={character.name} />
-                <p>{character.gender}</p>
+                <img src={character.image} alt={character.name} className='character-headshot' />
+                <div className='character-info'> 
+                    <h1 className='character-name'>{character.name}</h1>
+                    <p className='character-details'><b className='bold'>Gender: </b>{character.gender}</p>
+                    <p className='character-details'><b className='bold'>Hair Color: </b>{character.hairColor}</p>
+                    <p className='character-details'><b className='bold'>Occupation: </b>{character.occupation}</p>
+                    <p className='character-details'><b className='bold'>First Appearance: </b>{character.firstEpisode}</p>
+                    </div>
             </div>
         )
-        )
+
     }
+
 
     const loading = () => {
         return (
             <h1> Loading... </h1>
         )
     }
-
-    const handleChange = (e) => setEditForm({...editForm, [e.target.name]: e.target.value})
-
-    const handleSubmit = async (e) => {
-        console.log('submit successful')
-        e.preventDefault()
-        const options = {
-            method: "PUT", 
-            headers: {
-                "Content-Type": "application/json"
-            }, 
-            body: JSON.stringify(editForm)
-        }
-
-        try {
-            console.log(URL)
-            const response = await fetch(URL, options)
-            const updatedCharacter = await response.json()
-
-            setCharacters(updatedCharacter)
-            setEditForm(updatedCharacter)
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    const removeCharacter = async () => {
-        try {
-            const options = { method: 'DELETE'}
-            const URL = "http://localhost:3000/characters/" + id
-            console.log(URL)
-
-            const response = await fetch(URL, options)
-            const deletedCharacter = await response.json()
-            console.log(deletedCharacter)
-            navigate('/')
-        } catch (err) {
-            console.log(err)
-            navigate('http://localhost:3000/characters' + id)
-        }
-    }
-
     useEffect(() => {
-        getCharacters()}, [])
+        getCharacter();
+    }, []);
 
-    return (
-        <section>
-            {editForm ?
-            <EditForm 
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                characterData={editForm}
-                val={`Edit Character`}
-                /> :null}
-
-                {characters ? loaded() : loading()}
-
-                <div className="button-wrapper">
-                    <Link to='/'>Back To Home Page</Link>
-                    <button
-                        onClick={removeCharacter}
-                        >
-                            Remove Character
-                        </button>
+        return (
+            <div className='return-section'>
+           {character ? loaded() : loading()}
+           <Link to='/characters' className='return-link'>
+                <div className='return'>
+                        <img src="https://i.imgur.com/LnixoOK.png" alt="arrow" />
+                <p className='return-link'><b>Back To Index Page</b></p>
+                <img className='return-burger' src="https://i.imgur.com/9rZqDPW.png" alt="burger"/>
                 </div>
-
-        </section>
+            </Link>
+        </div>
     )
 }
-  
+
   export default ShowPage;
-  
