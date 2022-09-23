@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Character from '../components/Character'
+import {Link} from 'react-router-dom'
 
 function Characters(props) {
     const [characters, setCharacters] = useState(null);
@@ -20,18 +20,28 @@ function Characters(props) {
     }, []);
 
     return (
-        <>
-        {characters ? characters.map((character, idx) => {
-            return (
-                <div className='character-index'>
-                    <h1>{character.name}</h1>
-                    <img src={character.image} alt={character.name}/>
-                    <p>{character.gender}</p>
-                </div>
-            )
+        <div className='page-title'>
+            <h1>Browse All Characters</h1>
+            <div className='parent-index'>
+                {characters ? characters.map((character, idx) => {
+                    return (
+                        <div className='character-index'>
+                            <Link to={`/characters/${character._id}`}>
+                                <img src={character.image} alt={character.name} className="character-index-image"/>
+                            </Link>
+                            <h1>{character.name}</h1>
+                            <p>{character.occupation}</p>
+                            <div clasName='learn-more-section'>
+                                <Link className='link' to={`/characters/${character._id}`}>
+                                    <p className='learn-more-button'>Learn More</p>
+                                </Link>
+                            </div>
+                        </div>
+                )
         }) : <h1>Loading...</h1>
     }
-        </>
+        </div>
+        </div>
 
     )
 }

@@ -1,29 +1,36 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
-const AddNew = (props) => {
+const BASE_URL= 'http://localhost:4000/'
 
-    const BASE_URL = 'http://localhost:3000/characters/add-new'
 
-    const getCharacters = async (fn) => {
+function AddNew(props) {
+    const [character, setCharacter] = useState([]);
+    const { id } = useParams()
+    const URL = `${BASE_URL}characters/add-new`
+
+    const getCharacters = async () => {
 
         try {
-            const response = await fetch(BASE_URL);
-            const allCharacters = await response.json()
-    
-            fn(allCharacters);
+            const response = await fetch(URL)
+            const characterData = await response.json()
+            setCharacter(characterData)
         } catch (err) {
-            console.log(err);
+            console.log(err)
         }
-    };
+    }
+
 
     const initForm = {
         name: "", 
         image: "",
-        gender:""
+        gender:"",
+        hairColor: "",
+        occupation: "",
+        firstAppearance:""
     }
 
     const [characters, setCharacters] = useState([]); 
-    console.log(characters)
 
     const [newForm, setNewForm] = useState(initForm)
 
@@ -49,7 +56,7 @@ const AddNew = (props) => {
                 body: testingOutput
             }
 
-            const URL = BASE_URL+"characters"
+            const URL = `${BASE_URL} + characters/add-new`
             const response = await fetch(URL, options)
 
             const responseData = await response.json()
@@ -82,7 +89,23 @@ const AddNew = (props) => {
                     </label>
                     <label>
                         <span>Gender</span>
-                        <input type="text" required name="gender" placeholder="Enter Character's Gender" onChange={handleChange} defaultValue={newForm.title} />
+                        <input type="text" required name="gender" placeholder="Enter Character's Gender" onChange={handleChange} defaultValue={newForm.gender} />
+                    </label>
+                    <label>
+                        <span>Hair Color</span>
+                        <input type="text" required name="hair-color" placeholder="Enter Character's Hair Color" onChange={handleChange} defaultValue={newForm.hairColor} />
+                    </label>
+                    <label>
+                        <span>Occupation</span>
+                        <input type="text" required name="occupation" placeholder="Enter Character's Job" onChange={handleChange} defaultValue={newForm.occupation} />
+                    </label>
+                    <label>
+                        <span>First Episode Appearance</span>
+                        <input type="text" required name="first-episode" placeholder="Enter Character's Job" onChange={handleChange} defaultValue={newForm.firstEpisode} />
+                    </label>
+                    <label>
+                        <span>Relatives</span>
+                        <input type="text" required name="relatives" placeholder="Enter Character's Relatives" onChange={handleChange} defaultValue={newForm.relatives} />
                     </label>
                     <input type="Submit" defaultValue="Create Character" />
                 </form>
