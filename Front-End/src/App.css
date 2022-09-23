@@ -6,7 +6,7 @@ body {
 
 .App {
   text-align: center;
-  background-color: orange;
+  background-color: #ffa500;
   
 }
 
@@ -62,6 +62,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   border-radius: 10px;
+  border: 5px solid white;
 }
 
 .about-bob-image {
@@ -90,19 +91,15 @@ body {
   color: black;
 }
 
-.characters-index {
-  display: flex; 
-  flex-direction: row;
-  flex-wrap: wrap;
-  
-}
-
 .character {
   padding: 30px;
-  background-color: #F3F754;
+  background: url("https://i.imgur.com/GbvTZCu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 5px solid black;
   border-radius: 10px;
-  width: 700px;
-  margin-left: 22%;
+  width: 900px;
+  margin-left: 17%;
   margin-top: 30px;
   margin-bottom: 30px; 
   display: flex;
@@ -110,7 +107,13 @@ body {
 
 .character-name {
   font-size: 40px;
-  color: #a4403a;
+  color:red;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex; 
+  justify-content: center;
+  border: 1px solid black;
 }
 
 .character-info {
@@ -120,10 +123,141 @@ body {
   text-align: left;
 }
 
+.character-details {
+  background-color: white;
+  color: rgb(86, 86, 86);
+  padding: 5px;
+  border: 1px solid black;
+  width: 350px;
+
+}
+
+.bold {
+  color: black;
+}
+
 .character-headshot {
   margin-left: 100px;
+  margin-top: 3%;
+  max-height: 300px;
+  max-width: 300px;
+  border: 2px solid black;
+
 }
 
 .character-index-image {
-  max-width: 300px;
+  height: 200px;
+  max-width: 250px;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.character-index {
+  border: 5px solid #2566BD;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent-index {
+  width: 100%;
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  color: black;
+  font-size: 20px;
+}
+
+.page-title {
+  font-size: 30px;
+  color: white; 
+}
+
+.learn-more-button {
+  background-color: red;
+  color: yellow;
+  text-decoration: none;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.learn-more-button:hover {
+  background-color: yellow;
+  color: red;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.learn-more-section {
+  display: flex; 
+  align-items: space-evenly;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-top: 50px;
+  height: 20px;
+  align-self: flex-end;
+}
+
+.intro {
+  display: flex; 
+  justify-content: flex-end;
+  flex-direction: column;
+  line-height: 45px;
+}
+
+.section-one {
+  display: flex;
+  margin-left: 15%;
+  margin-right: 15%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.return {
+  padding-bottom: 10px;
+  padding: 10px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 300px;
+  height: 50px;
+  margin-left: 40%;
+}
+
+.return-burger {
+  width: 70px;
+  padding-left: 5px;
+}
+
+.return-section {
+  padding-bottom: 20px;
+}
+
+.return-link {
+  color: #000;
+  text-decoration: none;
 }

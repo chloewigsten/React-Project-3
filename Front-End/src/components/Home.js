@@ -3,21 +3,15 @@ import { Link } from 'react-router-dom'
 const Home = (props) => {
     return (
         <header className="home">
-            <h1>All Your Favorite Bob's Burger's Crew In One Place</h1>
-            <div> 
+            <div className='section-one'> 
                 <Link to='/characters'>
-                    <img src="https://i.imgur.com/Uf0A7B6.png" alt="Browse The Characters"/>
+                    <img src="https://i.imgur.com/zNsnqat.png" alt="Browse The Characters"/>
                 </Link>
-                <p>Find out more about the characters, and see how much you already knew about each one of them!</p>
+                <div className="intro">
+                    <h1>All Your Favorite Bob's Burger's Crew In One Place</h1>
+                    <p>Find out more about the characters, and see how much you already knew about each one of them!</p>
+                </div>
             </div>
-            <div className="add-new">
-            <Link to='/characters/add-new'>
-                   <h3>Add A New Character</h3>
-                </Link>
-            </div>
-            <Link to='/characters'>
-                    <img src="https://i.imgur.com/Uf0A7B6.png" alt="Browse The Characters"/>
-                </Link>
             <div className='about-bob'>
                 <img src="https://i.imgur.com/sd8oEyx.png" alt="bob talking to camera" className='about-bob-image'/>
                 <div className='about-bob-text'>

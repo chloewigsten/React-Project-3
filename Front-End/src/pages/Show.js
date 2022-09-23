@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 const BASE_URL = "http://localhost:4000/";
@@ -6,7 +6,6 @@ const BASE_URL = "http://localhost:4000/";
 function ShowPage(props) {
     const [character, setCharacter] = useState([]);
     const { id } = useParams()
-    const navigate = useNavigate()
     const URL = `${BASE_URL}characters/${id}`
 
     const getCharacter = async () => {
@@ -27,10 +26,10 @@ function ShowPage(props) {
                 <img src={character.image} alt={character.name} className='character-headshot' />
                 <div className='character-info'> 
                     <h1 className='character-name'>{character.name}</h1>
-                    <p>Gender: {character.gender}</p>
-                    <p>Hair Color: {character.hairColor}</p>
-                    <p>Occupation: {character.occupation}</p>
-                    <p>First Appearance: {character.firstEpisode}</p>
+                    <p className='character-details'><b className='bold'>Gender: </b>{character.gender}</p>
+                    <p className='character-details'><b className='bold'>Hair Color: </b>{character.hairColor}</p>
+                    <p className='character-details'><b className='bold'>Occupation: </b>{character.occupation}</p>
+                    <p className='character-details'><b className='bold'>First Appearance: </b>{character.firstEpisode}</p>
                     </div>
             </div>
         )
@@ -39,47 +38,25 @@ function ShowPage(props) {
 
 
     const loading = () => {
-        console.log(character)
         return (
             <h1> Loading... </h1>
         )
     }
-
-    const removeCharacter = async () => {
-        try {
-            const options = { method: 'DELETE'}
-            const URL = "http://localhost:4000/characters" + id
-            console.log(URL)
-
-            const response = await fetch(URL, options)
-            const deletedCharacter = await response.json()
-            console.log(deletedCharacter)
-            navigate('/')
-        } catch (err) {
-            console.log(err)
-            navigate('http://localhost:4000/characters' + id)
-        }
-    }
-
     useEffect(() => {
         getCharacter();
     }, []);
 
         return (
-            <>
+            <div className='return-section'>
            {character ? loaded() : loading()}
-
-        <div className="button-wrapper">
-                <button
-                    onClick={removeCharacter}
-                >
-                 Remove Character
-                </button>
-                <div>
-                <Link to='/'>Back To Home Page</Link>
+           <Link to='/characters' className='return-link'>
+                <div className='return'>
+                        <img src="https://i.imgur.com/LnixoOK.png" alt="arrow" />
+                <p className='return-link'><b>Back To Index Page</b></p>
+                <img className='return-burger' src="https://i.imgur.com/9rZqDPW.png" alt="burger"/>
                 </div>
-            </div>
-        </>
+            </Link>
+        </div>
     )
 }
 
